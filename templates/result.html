@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block content %}
+<section class="result panel"><p class="eyebrow">MODEL OUTPUT</p><h1>{{ label }}</h1><p>Estimated approval-class model score: <b>{{ probability }}%</b></p><p class="muted">This score is produced by a model trained on a small historical educational dataset. It is not an applicant's real approval probability and is not a creditworthiness assessment.</p><a class="button" href="{{ url_for('predict') }}">Try another sample</a></section>
+<div class="warning">A real lender must make decisions using lawful, current, validated, explainable processes with appropriate human oversight. This demo must not be used to approve, reject, rank, or price actual loan applications.</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}{% block content %}
+<div class="heading"><p class="eyebrow">APPLICATION INPUT</p><h1>Loan prediction demo</h1><p class="muted">Enter sample values to explore the trained model.</p></div>
+<div class="warning">Use fictional/sample information only. This form is based on a public educational dataset and does not collect documents, identity details, account numbers, or real applications.</div>
+<form method="post" class="panel"><div class="form-grid">
+<label>Gender<select name="Gender" required><option value="Male">Male</option><option value="Female">Female</option></select></label>
+<label>Marital status<select name="Married" required><option value="Yes">Married</option><option value="No">Not married</option></select></label>
+<label>Dependents<select name="Dependents" required><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3+">3+</option></select></label>
+<label>Education<select name="Education" required><option value="Graduate">Graduate</option><option value="Not Graduate">Not Graduate</option></select></label>
+<label>Self employed<select name="Self_Employed" required><option value="No">No</option><option value="Yes">Yes</option></select></label>
+<label>Applicant income (dataset units)<input type="number" name="ApplicantIncome" min="0" step="any" required placeholder="e.g. 5000"></label>
+<label>Co-applicant income (dataset units)<input type="number" name="CoapplicantIncome" min="0" step="any" required placeholder="e.g. 1500"></label>
+<label>Loan amount (dataset units)<input type="number" name="LoanAmount" min="0" step="any" required placeholder="e.g. 120"></label>
+<label>Loan term (dataset time units)<input type="number" name="Loan_Amount_Term" min="1" step="any" required placeholder="e.g. 360"></label>
+<label>Credit history indicator<select name="Credit_History" required><option value="1">1 — recorded as satisfactory</option><option value="0">0 — recorded as not satisfactory</option></select></label>
+<label>Property area<select name="Property_Area" required><option value="Urban">Urban</option><option value="Semiurban">Semiurban</option><option value="Rural">Rural</option></select></label>
+</div><button class="button" type="submit">Run educational prediction</button></form>
+{% endblock %}

@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block content %}
+<div class="heading"><p class="eyebrow">LOCAL DEMO RECORDS</p><h1>Prediction history</h1><p class="muted">Records are stored locally in SQLite on this computer.</p></div>
+<section class="panel"><table><tr><th>Date</th><th>Model output</th><th>Estimated approval-class score</th></tr>{% for r in records %}<tr><td>{{ r.created_at }}</td><td>{{ r.prediction }}</td><td>{{ '%.1f'|format(r.approval_probability*100) }}%</td></tr>{% else %}<tr><td colspan="3">No prediction history yet.</td></tr>{% endfor %}</table></section>
+{% endblock %}

@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block content %}
+<section class="hero"><div><p class="eyebrow">MACHINE LEARNING PROJECT</p><h1>Loan Approval Predictor</h1><p>Explore a classification model that learns patterns from a historical loan application dataset.</p><a class="button" href="{{ url_for('predict') }}">Try prediction demo →</a></div><div class="hero-art">₹</div></section>
+<div class="cards"><article><span>Demo applications</span><strong>{{ total }}</strong></article><article><span>Model outputs: Approved</span><strong>{{ approved }}</strong></article><article><span>Approval output share</span><strong>{{ rate }}%</strong></article></div>
+<section class="panel"><h2>Recent demo predictions</h2>{% if recent %}<table><tr><th>Date</th><th>Model output</th><th>Estimated approval-class score</th></tr>{% for r in recent %}<tr><td>{{ r.created_at }}</td><td>{{ r.prediction }}</td><td>{{ '%.1f'|format(r.approval_probability*100) }}%</td></tr>{% endfor %}</table>{% else %}<p class="muted">No demo predictions yet.</p>{% endif %}</section>
+<div class="warning"><b>Important:</b> This project is for learning only. Its output is not a real bank decision, credit score, or reliable assessment of an applicant. Do not use it to approve or reject real applicants.</div>
+{% endblock %}
