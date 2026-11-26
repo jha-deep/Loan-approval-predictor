@@ -13,45 +13,6 @@ Download a public loan prediction training CSV (commonly shared as the Analytics
 The CSV is expected to include columns such as:
 `Loan_ID, Gender, Married, Dependents, Education, Self_Employed, ApplicantIncome, CoapplicantIncome, LoanAmount, Loan_Amount_Term, Credit_History, Property_Area, Loan_Status`
 
-`Loan_Status` is the target column, usually `Y` or `N`. Dataset copies may differ; check the column names and license/terms of the exact copy you download. Do not upload a dataset unless its license permits redistribution.
-
-## Tech stack
-
-Python, Flask, Pandas, Scikit-learn, Random Forest, SQLite, HTML, CSS.
-
-## Run on Windows
-
-```bash
-py -m venv venv
-venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-Place the CSV at `data/loan_prediction.csv`, then:
-
-```bash
-python train_model.py
-python app.py
-```
-
-Open http://127.0.0.1:5000
-
-## Run on macOS/Linux
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
-
-Place the CSV at `data/loan_prediction.csv`, then:
-
-```bash
-python train_model.py
-python app.py
-```
-
-Training writes `loan_model.joblib` and `metrics.json`. The web app creates `applications.db`.
 
 ## Project structure
 
@@ -74,20 +35,6 @@ loan-approval-predictor/
     └── style.css
 ```
 
-## Push to GitHub
-
-Create an empty repository, then run:
-
-```bash
-git init
-git add .
-git commit -m "Build loan approval prediction ML demo"
-git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/loan-approval-predictor.git
-git push -u origin main
-```
-
-Replace `YOUR-USERNAME` with your GitHub username.
 
 ## Evaluation
 
